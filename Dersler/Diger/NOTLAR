@@ -1,0 +1,14 @@
+
+#1#  Find out if there are any duplicate urls used in the "URL"
+
+Steps:
+  -  import requests
+  -  url = 'https://jsonplaceholder.typicode.com/photos'
+  -  response = requests.get(url)                        ==> get the data about the photos
+  -  json_data = response.json()                         ==> read that data into a variable
+  -  url_list = []                                       ==> create a list for storing the url of each photo
+  -  for photo in json_data:
+         url_list.append(photo['url'])
+     print(len(url_list))                                ==> How many items are in the url list (Should be 5000 since we have 5000 photos in our dataset)?
+  -  print(len(set(url_list)))                           ==> How many items are there if we turn that list into a set?
+
